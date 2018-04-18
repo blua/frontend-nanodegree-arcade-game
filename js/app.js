@@ -1,6 +1,6 @@
 // Enemies our player must avoid
 class Enemy {
-    constructor (x,y,speed) {
+    constructor (x, y, speed) {
         this.sprite = 'images/enemy-bug.png';
         this.x = x;
         this.y = y;
@@ -100,20 +100,25 @@ document.addEventListener('keyup', function(e) {
 });
 
 let score = 0;
+let highScore = 0;
 const scoreSpan = document.querySelector('.score');
+const highScoreSpan = document.querySelector('.high-score');
 
 // When player wins, raise score by 1 and increase enemy speed by 10%
 function success() {
     score += 1;
     scoreSpan.textContent = score;
+    if (score > highScore) {
+        highScore = score;
+        highScoreSpan.textContent = highScore;
+    }
     allEnemies.forEach(function(enemy) {
         enemy.speed = enemy.speed * 1.1;
-        console.log('hmmm');
     });
 }
 
 // When player loses, reset score
-function resetScore() {
+function lost() {
     score = 0;
     scoreSpan.textContent = score;
 }

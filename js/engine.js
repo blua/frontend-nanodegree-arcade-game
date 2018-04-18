@@ -74,7 +74,7 @@ var Engine = (function(global) {
         updateEntities(dt);
         allEnemies.forEach(function(enemy) {
             if (player.x > enemy.x - 50 && player.x < enemy.x + 50 && player.y > enemy.y - 50 && player.y < enemy.y + 50) {
-                resetScore();
+                lost();
                 player.goBack();
             }
         });
