@@ -78,11 +78,11 @@ Player.prototype.goBack = function() {
 // Instantiate objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-const enemy1 = new Enemy(0,63,Math.random()*200);
+const enemy1 = new Enemy(0,63,50);
 const enemy2 = new Enemy(-300,63,enemy1.speed);
-const enemy3 = new Enemy(0,146,Math.random()*200);
+const enemy3 = new Enemy(0,146,100);
 const enemy4 = new Enemy(-300,146,enemy3.speed);
-const enemy5 = new Enemy(0,229,Math.random()*200);
+const enemy5 = new Enemy(0,229,75);
 const enemy6 = new Enemy(-300,229,enemy5.speed);
 allEnemies = [enemy1, enemy2, enemy3, enemy4, enemy5, enemy6];
 const player = new Player(203,406);
