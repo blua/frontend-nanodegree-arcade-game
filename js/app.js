@@ -5,6 +5,7 @@ class Enemy {
         this.x = x;
         this.y = y;
         this.speed = speed;
+        this.originalSpeed = speed;
     }
 };
 
@@ -121,4 +122,7 @@ function success() {
 function lost() {
     score = 0;
     scoreSpan.textContent = score;
+    allEnemies.forEach(function(enemy) {
+        enemy.speed = enemy.originalSpeed * 1.1;
+    });
 }
