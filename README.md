@@ -1,6 +1,23 @@
-frontend-nanodegree-arcade-game
-===============================
+# Classic Arcade Game Clone
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Table of Contents
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+* [How to run the game](#run)
+* [How to play](#play)
+* [Contribute](#contribute)
+
+## How to run the game
+
+To play this game you just have to load it in a compatible browser.
+
+## How to play
+
+The goal is simple: using your keyboard's up, down, left and right arrow keys, cross the pavement and reach the water on the other side without being hit by any bugs. Every time you do that, you will earn a point and return to your original position, and the bugs will get 10% faster. When you're hit by a bug, your score will be reset and the bugs will return to their original speed.
+
+The high score represents your longest streak of consecutive crosses without being hit by a bug in a particular session. It will be reset if you navigate away from the page or refresh the browser tab.
+
+Good luck!
+
+## Contribute
+
+This game was created as part of the **Udacity Front-End Web Developer Nanodegree**. It's just an exercise and should be my own work, so I won't accept any pull requests.
