@@ -8,8 +8,7 @@ class Enemy {
     }
 };
 
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
+// Update the enemy's position. Parameter dt is a time delta between ticks
 // to ensure the game runs at the same speed for all computers.
 Enemy.prototype.update = function(dt) {
     if (this.x > 500) {
@@ -19,44 +18,19 @@ Enemy.prototype.update = function(dt) {
     }
 };
 
-// Draw the enemy on the screen, required method for game
+// Draw the enemy on the screen
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
-
+// Player class
 class Player {
     constructor (x,y) {
-        // Variables applied to each of our instances go here,
-        // we've provided one for you to get started
-
-        // The image/sprite for our enemies, this uses
-        // a helper we've provided to easily load images
         this.sprite = 'images/char-cat-girl.png';
         this.x = x;
         this.y = y;
     }
 };
-
-Player.prototype.update = function() {
-    if (this.x < 1){
-        this.x = 1;
-    }
-    else if (this.x > 405) {
-        this.x = 405;
-    }
-    else if (this.y > 406) {
-        this.y = 406;
-    }
-};
-
-Player.prototype.goBack = function() {
-    this.x = 203;
-    this.y = 406;
-}
 
 // Draw the player on the screen
 Player.prototype.render = function() {
@@ -81,12 +55,31 @@ Player.prototype.handleInput = function(direction) {
     }
 };
 
-// Now instantiate your objects.
+// Keep player inside canvas
+Player.prototype.update = function() {
+    if (this.x < 1){
+        this.x = 1;
+    }
+    else if (this.x > 405) {
+        this.x = 405;
+    }
+    else if (this.y > 406) {
+        this.y = 406;
+    }
+};
+
+// Return player to initial spot
+Player.prototype.goBack = function() {
+    this.x = 203;
+    this.y = 406;
+}
+
+// Instantiate objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-const enemy1 = new Enemy(0,63,Math.random()*100);
+const enemy1 = new Enemy(0,63,Math.random()*200);
 const enemy2 = new Enemy(-300,63,enemy1.speed);
-const enemy3 = new Enemy(0,146,Math.random()*300);
+const enemy3 = new Enemy(0,146,Math.random()*200);
 const enemy4 = new Enemy(-300,146,enemy3.speed);
 const enemy5 = new Enemy(0,229,Math.random()*200);
 const enemy6 = new Enemy(-300,229,enemy5.speed);
@@ -107,7 +100,20 @@ document.addEventListener('keyup', function(e) {
 });
 
 let score = 0;
+const scoreSpan = document.querySelector('.score');
 
-function incrementScore() {
-        score += 1;
+// When player wins, raise score by 1 and increase enemy speed by 10%
+function success() {
+    score += 1;
+    scoreSpan.textContent = score;
+    allEnemies.forEach(function(enemy) {
+        enemy.speed = enemy.speed * 1.1;
+        console.log('hmmm');
+    });
+}
+
+// When player loses, reset score
+function resetScore() {
+    score = 0;
+    scoreSpan.textContent = score;
 }
