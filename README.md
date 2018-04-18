@@ -12,7 +12,7 @@ To play this game you just have to load it in a compatible browser.
 
 ## How to play
 
-The goal is simple: using your keyboard's up, down, left and right arrow keys, cross the pavement and reach the water on the other side without being hit by any bugs. Every time you do that, you will earn a point and return to your original position, and the bugs will get 10% faster. When you're hit by a bug, your score will be reset and the bugs will return to their original speed.
+The goal is simple: using your keyboard's up, down, left and right arrow keys, cross the pavement and reach the water on the other side without being hit by any bugs. Every time you do that, you earn a point and return to your original position, and the bugs get 10% faster. When you're hit by a bug, your score is reset, you return to your original position and the bugs return to their original speed.
 
 The high score represents your longest streak of consecutive crosses without being hit by a bug in a particular session. It will be reset if you navigate away from the page or refresh the browser tab.
 

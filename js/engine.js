@@ -75,12 +75,10 @@ var Engine = (function(global) {
         allEnemies.forEach(function(enemy) {
             if (player.x > enemy.x - 50 && player.x < enemy.x + 50 && player.y > enemy.y - 50 && player.y < enemy.y + 50) {
                 lost();
-                player.goBack();
             }
         });
         if (player.y < 0) {
             success();
-            player.goBack();
         }
     }
 

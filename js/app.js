@@ -116,6 +116,7 @@ function success() {
     allEnemies.forEach(function(enemy) {
         enemy.speed = enemy.speed * 1.1;
     });
+    player.goBack();
 }
 
 // When player loses, reset score
@@ -125,4 +126,5 @@ function lost() {
     allEnemies.forEach(function(enemy) {
         enemy.speed = enemy.originalSpeed * 1.1;
     });
+    player.goBack();
 }
