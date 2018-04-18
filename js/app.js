@@ -105,7 +105,8 @@ let highScore = 0;
 const scoreSpan = document.querySelector('.score');
 const highScoreSpan = document.querySelector('.high-score');
 
-// When player wins, raise score by 1 and increase enemy speed by 10%
+// Function to call when player wins: score += 1, update high score if applicable,
+// increase enemy speed by 10% and return player to initial spot
 function success() {
     score += 1;
     scoreSpan.textContent = score;
@@ -119,12 +120,12 @@ function success() {
     player.goBack();
 }
 
-// When player loses, reset score
+// Function to call when player loses: reset score
 function lost() {
     score = 0;
     scoreSpan.textContent = score;
     allEnemies.forEach(function(enemy) {
-        enemy.speed = enemy.originalSpeed * 1.1;
+        enemy.speed = enemy.originalSpeed;
     });
     player.goBack();
 }
